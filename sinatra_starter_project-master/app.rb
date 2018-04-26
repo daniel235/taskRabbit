@@ -15,6 +15,9 @@ get "/" do
 	erb :index
 end
 
+get "/results" do
+	erb :index
+end
 
 get "/dashboard" do
 	authenticate!
