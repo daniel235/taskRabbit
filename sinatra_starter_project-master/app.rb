@@ -16,7 +16,16 @@ get "/" do
 end
 
 get "/results" do
-	erb :index
+	if(params.has_key?(:search))
+		s = "#{params[:search]}"
+		if(s != "")
+			return s
+		else
+			return "search empty"
+		end
+	else
+		redirect "/"
+	end
 end
 
 get "/dashboard" do
