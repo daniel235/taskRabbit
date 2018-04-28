@@ -60,7 +60,7 @@ end
 
 #if the user is not signed in, will redirect to login page
 def authenticate!
-	if !current_us''''er
+	if !current_user
 		redirect "/login"
 	end
 end
