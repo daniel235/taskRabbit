@@ -10,7 +10,17 @@
 <div class="container">
   <div class="profile">
     <h2>My Profile</h2>
-    <h3></h3>
+    <% if(session[:user_id] != nil) %>
+    <ul><% @so.each do |posts| %>
+      <li><h4><%= posts.title %></h4>
+        <p><%= posts.description %></p>
+        <p><%= posts.cost %></p>
+      </li>
+      <% end %>
+    </ul>
+    <% end %>
+    <h3>Services Used</h3>
+
   </div>
   <!-- Example row of columns -->
   <div class="rs">

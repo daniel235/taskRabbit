@@ -14,6 +14,17 @@ require_relative "services.rb"
 # if they are not signed in, current_user will be nil
 
 get "/" do
+	if(session[:user_id] != nil)
+		s = Services.new
+		l = Array.new
+		serv = s.gp(:user_id)
+		serv.each do |a|
+    		if(a.workerId == session[:userid])
+    			l.push(a)
+    		end
+    	end
+	end
+	@so = l
 	erb :index
 end
 
