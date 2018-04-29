@@ -19,7 +19,7 @@ class Services
 	property :description, String
     property :created_at, DateTime
 
-    def gp(userid)
+    def gp()
     	return Services.all()
     end
 end
@@ -48,7 +48,7 @@ end
 
 get "/newsfeed" do
 	@s = Services.new
-	a = @s.gp(2)
+	a = @s.gp()
 	@s = a
 	erb :newsfeed
 end

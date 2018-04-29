@@ -1,0 +1,10 @@
+<div class="container">
+<h2>Search Results</h2>
+<% @service.each do |po| %>
+<% if po.title.include? @keyword %>
+	<h3><%= po.title %></h3>
+	<p><%= po.category %></p>
+	<p><%= po.cost %></p>
+<% end %>
+<% end %>
+</div>
