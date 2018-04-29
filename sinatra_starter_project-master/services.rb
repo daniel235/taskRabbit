@@ -48,6 +48,7 @@ end
 
 get "/newsfeed" do
 	@s = Services.new
-	a = @s.gp(0)
+	a = @s.gp(2)
+	@s = a
 	erb :newsfeed
 end
