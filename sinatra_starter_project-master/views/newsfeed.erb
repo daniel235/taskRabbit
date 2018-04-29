@@ -2,7 +2,9 @@
 <h2>NewsFeed</h2><br>
 <% @s.each do |ps| %>
 		<h3><%= ps.title %></h3>
-		<p><%= ps.cost %></p>''
+		<p><%= ps.cost %></p>
+		<p><%= ps.workerId %></p>
 		<p><%= ps.description %></p>
+		<p><%= ps.created_at %></p>
 <% end %>
 </div>

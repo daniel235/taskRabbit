@@ -18,14 +18,8 @@ serv = s.gp()
 
 get "/" do
 	if(session[:user_id] != nil)
-		lis = Array.new
-		serv.each do |a|
-    		if(a.workerId == session[:userid])
-    			lis.push(a)
-    		end
-    	end
+		@so = serv
 	end
-	@so = lis
 	erb :index
 end
 
