@@ -2,8 +2,13 @@
 <head>
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <style>
+    .middle {
+      background-color: #37ce44;
+    }
+  </style>
 </head>
-<div class="jumbotron">
+<div class="jumbotron middle">
   <div class="container">
     <h1 class="display-3">Hello, world!</h1>
     <p>Welcome to Task Rabbit.  Here you can find different services you are looking for just type in the search bar</p>
@@ -16,8 +21,7 @@
     <h2>My Profile</h2>
     <% if(session[:user_id] != nil) %>
     <ul style="list-style: none"><% @so.each do |posts| %>
-      <% if posts.workerId = session[:user_id] %>
-      <p><%= session[:user_id] %></p>
+      <% if posts.workerId == session[:user_id] %>
         <li><h4><%= posts.title %></h4>
         <p><%= posts.description %></p>
         <p><%= posts.cost %></p>
@@ -41,6 +45,5 @@
 
 </div> <!-- /container -->
 <script>
-  alert("javascript down here");
   
 </script>

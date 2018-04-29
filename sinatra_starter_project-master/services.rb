@@ -33,7 +33,7 @@ get "/billboard" do
 end
 
 
-post "/billboard" do
+post "/classifieds" do
 	s = Services.new
 	title = params[:title]
 	category = params[:category]
@@ -43,7 +43,7 @@ post "/billboard" do
 	s.category = category.downcase
 	s.cost = params[:cost]
 	s.save
-	return "Post #{s.title} , #{s.workerId} added!"
+	erb :classifieds
 end
 
 get "/newsfeed" do
