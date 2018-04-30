@@ -2,6 +2,7 @@ require "sinatra"
 require "data_mapper"
 require_relative "authentication.rb"
 require_relative "services.rb"
+require_relative "messaging.rb"
 
 
 #the following urls are included in authentication.rb

@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'data_mapper'
 require_relative 'user.rb'
 
 if ENV['DATABASE_URL']
@@ -18,7 +19,7 @@ class Message
 
 end
 
-DataMapper.finalize!
+DataMapper.finalize
 
 Message.auto_upgrade!
 	
@@ -27,21 +28,32 @@ get "/chat" do
 	@mchat = Message.all(:senderId => session[:user_id])
 	#cycle through users
 
-	if(params.has_key(:message))
+	if(params.has_key?(:message))
 		@id = params[:message]
 		@mchat.each do |ch|
 			if(ch.id == @id)
 				@dms = ch
-
-		@slide = Users.all(:id => @id)
+			end
+		end
+		@slide = User.all(:id => @id)
 		erb :dm 
-
 	else
 		erb :chat
 	end
 end
 
 
-get "/create" do
-	
+post "/create" do
+	id = params[:id]
+	content = params[:content]
+
+	d = Message.new
+	d.senderId = session[:user_id]
+	d.receiverId = id
+	d.content = content.downcase
+
+	d.save
+
+	redirect "/chat"
+
 end
