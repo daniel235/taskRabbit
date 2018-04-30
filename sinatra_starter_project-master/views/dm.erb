@@ -1,5 +1,11 @@
 <div class="container">
 <h2>Your DM's</h2>
-<h3><%= @slide.namo %></h3>
-<p><%= @dms.content %></p>
+<% if @slide != nil %>
+<% @slide.each do |por| %>
+	<h4><%= por.namo %></h4>
+	<% if @dms != nil %>
+		<p><%= @dms.content %></p>
+	<% end %>
+<% end %>
+<% end %>
 </div>

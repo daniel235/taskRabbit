@@ -31,7 +31,7 @@ get "/chat" do
 	if(params.has_key?(:message))
 		@id = params[:message]
 		@mchat.each do |ch|
-			if(ch.id == @id)
+			if(ch.senderId == @id || ch.receiverId == @id)
 				@dms = ch
 			end
 		end
