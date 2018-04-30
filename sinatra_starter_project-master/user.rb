@@ -13,6 +13,7 @@ class User
     include DataMapper::Resource
     property :id, Serial
     property :email, String
+    property :namo, String
     property :password, String
     property :created_at, DateTime
 

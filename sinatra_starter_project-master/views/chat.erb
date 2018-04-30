@@ -1,0 +1,6 @@
+<h2>Messages</h2>
+<% @mchat.each do |mess| %>
+	<a href="chat?message=<%= mess.id %>"><%= mess.content %></a>
+<% end %>
+
+<button><a href="dm">Create Message</a></button>

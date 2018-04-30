@@ -35,9 +35,11 @@ end
 post "/register" do
 	email = params[:email]
 	password = params[:password]
+	nam = params[:namo]
 
 	u = User.new
 	u.email = email.downcase
+	u.namo = nam.downcase
 	u.password =  password
 	u.save
 
