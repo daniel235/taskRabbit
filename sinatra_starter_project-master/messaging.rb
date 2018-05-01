@@ -25,13 +25,13 @@ Message.auto_upgrade!
 	
 
 get "/chat" do 
-	@mchat = Message.all(:senderId => session[:user_id])
+	@mchat = Message.all(:receiverId => session[:user_id])
 	#cycle through users
 
 	if(params.has_key?(:message))
 		@id = params[:message]
 		@mchat.each do |ch|
-			if(ch.senderId == @id || ch.receiverId == @id)
+			if(ch.senderId == @id)
 				@dms = ch
 			end
 		end
