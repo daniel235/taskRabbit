@@ -42,7 +42,6 @@ get "/chat" do
 	end
 end
 
-
 post "/create" do
 	id = params[:id]
 	content = params[:content]

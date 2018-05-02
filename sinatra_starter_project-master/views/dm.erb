@@ -3,11 +3,10 @@
 <% if @slide != nil %>
 <% @slide.each do |por| %>
 	<% @mchat.each do |cho| %>
-		<% if cho.receiverId == por.id %>
-			<h4><%= por.namo %></h4>
-			<p><%= cho.content %></p>
-			<br>
-		<% end %>
+		<h4><%= por.namo %></h4>
+		<p><%= cho.receiverId %></p>
+		<p><%= cho.content %></p>
+		<br>
 	<% end %>
 <% end %>
 <% end %>

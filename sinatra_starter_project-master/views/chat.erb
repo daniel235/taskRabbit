@@ -3,7 +3,8 @@
 </head>
 <h2>Messages</h2>
 <% @mchat.each do |mess| %>
-	<a href="chat?message=<%= mess.receiverId %>"><%= mess.content %></a>
+	<a href="chat?message=<%= mess.senderId %>"><%= mess.content %></a>
+	<br>
 <% end %>
 
 <button id="ids">Create Message</button>
