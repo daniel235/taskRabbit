@@ -14,7 +14,7 @@ class Message
 	property :id, Serial
 	property :senderId, Integer
 	property :receiverId, Integer
-	property :content, String
+	property :content, Text
 	property :created_at, DateTime
 
 end
@@ -22,7 +22,7 @@ end
 DataMapper.finalize
 
 Message.auto_upgrade!
-	
+
 
 get "/chat" do 
 	@mchat = Message.all(:receiverId => session[:user_id])
