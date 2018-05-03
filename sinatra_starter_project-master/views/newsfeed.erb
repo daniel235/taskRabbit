@@ -1,7 +1,12 @@
 <div class="container">
 <h2>NewsFeed</h2><br>
-<% @s.each do |ps| %>
+<% @so.each do |ps| %>
 		<h3><%= ps.title %></h3>
+		<% @u.each do |us| %>
+			<% if(us.id == ps.workerId) %>
+				<p><strong><%= us.namo %></strong></p>
+			<% end %>
+		<% end %>
 		<p><%= ps.cost %></p>
 		<p><%= ps.description %></p>
 		<p><%= ps.created_at %></p>

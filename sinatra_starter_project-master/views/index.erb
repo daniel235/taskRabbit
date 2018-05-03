@@ -6,6 +6,9 @@
     .middle {
       background-color: #37ce44;
     }
+    .pserv a {
+      text-decoration: none;
+    }
   </style>
 </head>
 <div class="jumbotron middle">
@@ -20,7 +23,6 @@
   <div class="profile">
     <h2>My Profile</h2>
     <% if(session[:user_id] != nil) %>
-    <h3><%= session[:user_id] %>
     <ul style="list-style: none"><% @so.each do |posts| %>
       <% if posts.workerId == session[:user_id] %>
         <li><h4><%= posts.title %></h4>
@@ -31,7 +33,7 @@
       <% end %>
     </ul>
 
-    <a href="/billboard">Post Service</a>
+    <button type="button" class="btn btn-outline-success pserv"><a href="/billboard">Post Service</a></button>
     <% end %>
     <h3>Services Used</h3>
 

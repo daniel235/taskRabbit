@@ -16,7 +16,7 @@ class Services
 	property :title, String
 	property :category, String
 	property :cost, Float
-	property :description, String
+	property :description, Text
     property :created_at, DateTime
 
     def gp()
@@ -48,7 +48,8 @@ end
 
 get "/newsfeed" do
 	@s = Services.new
+	@u = User.all()
 	a = @s.gp()
-	@s = a
+	@so = a
 	erb :newsfeed
 end
