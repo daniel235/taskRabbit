@@ -15,11 +15,13 @@ require_relative "messaging.rb"
 # if they are not signed in, current_user will be nil
 
 s = Services.new
+ul = User.new
 serv = s.gp()
 
 get "/" do
 	if(session[:user_id] != nil)
 		@so = serv
+		@na = ul.getUserName(session[:user_id])
 		erb :index
 	else
 		erb :"authentication/login"
@@ -45,4 +47,8 @@ end
 get "/dashboard" do
 	authenticate!
 	erb :dashboard
+end
+
+get "/about" do 
+	erb :about
 end

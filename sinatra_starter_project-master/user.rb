@@ -20,6 +20,10 @@ class User
     def login(password)
     	return self.password == password
     end
+
+    def getUserName(ids)
+        return User.all(:id => ids)
+    end
 end
 
 # Perform basic sanity checks and initialize all relationships

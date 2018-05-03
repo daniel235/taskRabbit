@@ -3,19 +3,25 @@
   <link rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   <style>
+    .container {
+      font-family: 'Didact Gothic', sans-serif;
+    }
     .middle {
       background-color: #37ce44;
     }
     .pserv a {
       text-decoration: none;
     }
+    .pserv :hover {
+      color: white;
+    }
   </style>
 </head>
 <div class="jumbotron middle">
   <div class="container">
-    <h1 class="display-3">Hello, world!</h1>
+    <h1 class="display-3">Hello, <%= @na.first.namo.capitalize %>!</h1>
     <p>Welcome to Task Rabbit.  Here you can find different services you are looking for just type in the search bar</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+    <p><a class="btn btn-primary btn-lg" href="/about" role="button">Learn more &raquo;</a></p>
   </div>
 </div>
 
