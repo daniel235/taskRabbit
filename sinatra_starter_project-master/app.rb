@@ -20,8 +20,10 @@ serv = s.gp()
 get "/" do
 	if(session[:user_id] != nil)
 		@so = serv
+		erb :index
+	else
+		erb :"authentication/login"
 	end
-	erb :index
 end
 
 get "/results" do

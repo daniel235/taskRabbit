@@ -16,7 +16,6 @@ class Message
 	property :receiverId, Integer
 	property :content, Text
 	property :created_at, DateTime
-
 end
 
 DataMapper.finalize
