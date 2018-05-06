@@ -29,13 +29,15 @@ get "/chat" do
 
 	if(params.has_key?(:message))
 		@id = params[:message]
+		i = 0
 		@mchat.each do |ch|
 			if(ch.senderId == @id)
-				@dms = ch
+				@dms[i] = ch
+				i += 1
 			end
 		end
 		@slide = User.all(:id => @id)
-		erb :dm 
+		erb :dm
 	else
 		erb :chat
 	end

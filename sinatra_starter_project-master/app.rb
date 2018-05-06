@@ -20,7 +20,7 @@ serv = s.gp()
 
 get "/" do
 	if(session[:user_id] != nil)
-		@so = serv
+		@so = serv.all(:workerId => session[:user_id])
 		@na = ul.getUserName(session[:user_id])
 		erb :index
 	else

@@ -1,7 +1,19 @@
+<style>
+	.billForm {
+		margin-top: 10%;
+	}
+</style>
+<div class="container billForm">
+<h2>Post To Classifieds</h2>
 <form action="classifieds" method="post">
 	Title: <br><input type="text" name="title"/><br><br>
-	Category: <br><input type="option" name="category"/><br><br>
+	Category: <br><select name="category">
+		<option value="yard">Yard</option>
+		<option value="auto">Auto</option>
+		<option value="home">Home</option>
+	</select><br><br>
 	Cost: <br><input type="text" name="cost"/><br><br>
 	Description: <br><input type="textarea" name="description"/><br>
 	<input type="submit" value="Post"/>
 </form>
+</div>
