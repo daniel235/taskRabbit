@@ -37,10 +37,12 @@ post "/classifieds" do
 	s = Services.new
 	title = params[:title]
 	category = params[:category]
+	descript = params[:description]
 
 	s.workerId = session[:user_id]
 	s.title = title.downcase
 	s.category = category.downcase
+	s.description = descript.downcase
 	s.cost = params[:cost]
 	s.save
 	erb :classifieds
@@ -52,4 +54,15 @@ get "/newsfeed" do
 	a = @s.gp()
 	@so = a
 	erb :newsfeed
+end
+
+get "/checkout" do
+	if(params.has_key?(:id))
+		id = params[:id]
+		@inst = Services.all(:id => id)
+		@inst = @inst.first()
+		erb :checkout
+	else
+		return "Need to select a service!"
+	end
 end

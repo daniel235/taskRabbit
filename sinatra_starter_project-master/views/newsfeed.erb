@@ -1,14 +1,13 @@
 <div class="container">
 <h2>NewsFeed</h2><br>
 <% @so.each do |ps| %>
-		<h3><%= ps.title %></h3>
+		<h3><a href="checkout?id=<%= ps.id %>"><%= ps.title %></a></h3>
 		<% @u.each do |us| %>
 			<% if(us.id == ps.workerId) %>
 				<p><strong><%= us.namo %></strong></p>
 			<% end %>
 		<% end %>
 		<p><%= ps.cost %></p>
-		<p><%= ps.workerId %></p>
 		<p><%= ps.description %></p>
 		<p><%= ps.created_at %></p>
 <% end %>

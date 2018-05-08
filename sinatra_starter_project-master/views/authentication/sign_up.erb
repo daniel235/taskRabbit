@@ -1,6 +1,37 @@
-<form action="register" method="POST">
-	Email: <input type="text" name="email"><br/>
-	Name: <input type="text" name="namo"><br/>
-	Password: <input type="password" name="password"><br/>
-	<input type="submit" value="Register">
+<style>
+	.lg {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		/*background-color: #ebebe8;*/
+		text-align: center;
+		margin-top: 10%;
+		font-family: 'Indie Flower', cursive;
+		font-size: 2em;
+	}
+	h3 {
+		font-size: 1.8em;
+	}
+
+	#thbu {
+		font-size: 1.1em;
+		width: 40%;
+	}
+	.lg-form {
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+	.lg-form input {
+		border-radius: 5%;
+	}
+</style>
+
+<div class="container-fluid lg">
+<form class="lg-form" action="register" method="POST">
+	Email: <br><input type="text" name="email"><br/>
+	Name: <br><input type="text" name="namo"><br/>
+	Password: <br><input type="password" name="password"><br/>
+	<button id="thbu" type="submit" class="btn btn-outline-primary">Register</button>
 </form>
+</div>
