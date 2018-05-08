@@ -24,6 +24,7 @@ Message.auto_upgrade!
 
 
 get "/chat" do 
+	authenticate!
 	@mchat = Message.all(:receiverId => session[:user_id])
 	#cycle through users
 
@@ -44,6 +45,7 @@ get "/chat" do
 end
 
 post "/create" do
+	authenticate!
 	id = params[:id]
 	content = params[:content]
 

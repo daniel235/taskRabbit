@@ -34,6 +34,7 @@ end
 
 
 post "/classifieds" do
+	authenticate!
 	s = Services.new
 	title = params[:title]
 	category = params[:category]
@@ -49,6 +50,7 @@ post "/classifieds" do
 end
 
 get "/newsfeed" do
+	authenticate!
 	@s = Services.new
 	@u = User.all()
 	a = @s.gp()
@@ -57,6 +59,7 @@ get "/newsfeed" do
 end
 
 get "/checkout" do
+	authenticate!
 	if(params.has_key?(:id))
 		id = params[:id]
 		@inst = Services.all(:id => id)
