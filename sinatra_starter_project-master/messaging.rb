@@ -23,6 +23,10 @@ DataMapper.finalize
 Message.auto_upgrade!
 
 
+
+#---
+#BUNDLE_WITHOUT: "production"
+
 get "/chat" do 
 	authenticate!
 	@mchat = Message.all(:receiverId => session[:user_id])
