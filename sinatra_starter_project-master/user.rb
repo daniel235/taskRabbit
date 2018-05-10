@@ -4,7 +4,7 @@ require 'data_mapper' # metagem, requires common plugins too.
 # if on heroku, use Postgres database
 # if not use sqlite3 database I gave you
 if ENV['DATABASE_URL']
-  DataMapper::setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
+  DataMapper::setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/postgresql-rectangular-72929')
 else
   DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/app.db")
 end
