@@ -30,6 +30,7 @@ get "/chat" do
 
 	if(params.has_key?(:message))
 		@id = params[:message]
+		@myMessage = Message.all(:senderId => session[:user_id], :receiverId => @id)
 		@dm = Message.all(:receiverId => session[:user_id], :senderId => @id)
 		@slide = User.all(:id => @id)
 		erb :dm
