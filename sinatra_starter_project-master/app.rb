@@ -30,6 +30,7 @@ end
 
 get "/results" do
 	if(params.has_key?(:search))
+		@u = User.all()
 		sl = "#{params[:search]}"
 		if(sl != "")
 			sl = sl.downcase
