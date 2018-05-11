@@ -1,23 +1,44 @@
-<head>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-</head>
+<style>
+	.hform {
+		height: 30%;
+	}
+	.messg {
+		width: 70%;
+	}
+	.cl {
+		text-decoration: none;
+		color: black;
+	}
+</style>
+<div class="container">
 <h2>Messages</h2>
+<div class="messg">
 <% @mchat.each do |mess| %>
-	<a href="chat?message=<%= mess.senderId %>"><%= mess.content %></a>
-	<br>
+	<a class="cl" href="chat?message=<%= mess.senderId %>"><%= User.all(:id => mess.senderId).first().namo %></p>
+	<a class="cl" href="chat?message=<%= mess.senderId %>"><%= mess.content %></a>
+	<br><br><br>
 <% end %>
+</div>
 
 <button id="ids">Create Message</button>
+<div class="hform">
 <form id="mcreate" action="create" method="post">
 	<input type="text" name="id" placeholder="id">
 	<input type="text" name="content" placeholder="message">
 	<input type="submit" value="Submit">
 </form>
+</div>
+</div>
 <script>
 	$(document).ready(function(){
 		$("#mcreate").hide();
 		$("#ids").mouseover(function(){
 			$("#mcreate").show();
+			$("#ids").hide()
+		});
+		$(".hform").mouseleave(function(){
+			$("#mcreate").hide();
+			$("#ids").show();
 		});
 	});
 </script>
