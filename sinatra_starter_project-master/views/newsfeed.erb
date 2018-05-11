@@ -1,10 +1,23 @@
+<style>
+	.im {
+		display: inline-flex;
+	}
+	.chat {
+		margin-left: 8%;
+		width: 20%;
+		height: 80%;
+	}
+</style>
+
 <div class="container">
 <h2>NewsFeed</h2><br>
 <% @so.each do |ps| %>
 		<h3><a href="checkout?id=<%= ps.id %>"><%= ps.title %></a></h3>
 		<% @u.each do |us| %>
 			<% if(us.id == ps.workerId) %>
-				<p><strong><%= us.namo %></strong></p>
+				<div class="im">
+					<p><strong><%= us.namo %></strong></p><a href="chat?message=<%= ps.workerId %>"><img class="chat" src="https://res.cloudinary.com/dm89xwpaq/image/upload/v1526071718/msg_aipk0j.png" /></a>
+				</div>
 			<% end %>
 		<% end %>
 		<p><%= ps.cost %></p>
@@ -12,3 +25,13 @@
 		<p><%= ps.created_at %></p>
 <% end %>
 </div>
+
+<script>
+	$(document).ready(function(){
+		$(".chat").mouseover(function(){
+			$(this).addClass("animated flash");
+		}).mouseleave(function(){
+			$(".chat").removeclass("animated flash");
+		});
+	});
+</script>
