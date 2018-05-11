@@ -1,4 +1,12 @@
-<div class="container">
+<style>
+	.message {
+		width: 50%;
+		float: left;
+		margin-left: 12%
+	}
+</style>
+
+<div class="container message">
 <br><h2>Your DM's</h2><br>
 <h4>You are messaging <%= @slide.first().namo %></h4>
 <% if @slide != nil %>
